@@ -1,0 +1,646 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #004d40;
+  color: white;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 18px 0;
+  background: rgba(0, 77, 64, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #d9ff7a;
+}
+
+.logo-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d9ff7a, #00c853);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #004d40;
+  font-weight: 900;
+}
+
+.menu {
+  display: flex;
+  gap: 28px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.menu a:hover {
+  color: #d9ff7a;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background:
+    radial-gradient(circle at top right, rgba(217,255,122,0.25), transparent 35%),
+    linear-gradient(135deg, #004d40, #00352d);
+  padding-top: 90px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-text h4 {
+  color: #d9ff7a;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.hero-text h1 {
+  font-size: 58px;
+  line-height: 1.15;
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+
+.hero-text h1 span {
+  color: #d9ff7a;
+}
+
+.hero-text p {
+  color: #e8f5e9;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  max-width: 620px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: #d9ff7a;
+  color: #004d40;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(217,255,122,.25);
+}
+
+.btn-outline {
+  border: 2px solid #d9ff7a;
+  color: #d9ff7a;
+}
+
+.btn-outline:hover {
+  background: #d9ff7a;
+  color: #004d40;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 30px;
+  padding: 35px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 25px 60px rgba(0,0,0,.25);
+}
+
+.hero-card img {
+  width: 100%;
+  border-radius: 25px;
+  height: 360px;
+  object-fit: cover;
+  background: #d9ff7a;
+}
+
+.hero-card h3 {
+  margin-top: 22px;
+  font-size: 26px;
+  color: #d9ff7a;
+}
+
+.hero-card p {
+  margin-top: 10px;
+  color: #e8f5e9;
+  line-height: 1.7;
+}
+
+/* ABOUT */
+section {
+  padding: 90px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-title h2 {
+  font-size: 42px;
+  font-weight: 900;
+  color: #d9ff7a;
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  max-width: 720px;
+  margin: auto;
+  color: #e8f5e9;
+  line-height: 1.8;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.about-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 24px;
+  transition: .3s;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  background: rgba(217,255,122,0.12);
+}
+
+.about-card h3 {
+  color: #d9ff7a;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.about-card p {
+  color: #e8f5e9;
+  line-height: 1.8;
+}
+
+/* ================================
+   STRUKTUR ORGANISASI RT
+================================ */
+
+.struktur-rt {
+  background: #fff;
+  color: #111;
+  padding: 90px 0;
+}
+
+.struktur-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.struktur-title h2,
+.struktur-title h1 {
+  color: #111;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.struktur-title h2 {
+  font-size: 34px;
+}
+
+.struktur-title h1 {
+  font-size: 38px;
+}
+
+.struktur-title p {
+  color: #333;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.org-photo-chart,
+.connector,
+.top-branch,
+.seksi-branch,
+.org-card {
+  overflow: visible !important;
+}
+
+.org-photo-chart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.org-card {
+  width: 230px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.18);
+  border: 1px solid #e5e5e5;
+  position: relative;
+  z-index: 5;
+}
+
+.org-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  background: #f7f7f7;
+  border-radius: 20px 20px 0 0;
+}
+
+.org-info {
+  padding: 15px;
+  text-align: center;
+  background: linear-gradient(135deg, #004d40, #00352d);
+  border-radius: 0 0 20px 20px;
+}
+
+.org-info span {
+  display: block;
+  color: #d9ff7a;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.org-info h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.line-down {
+  width: 4px;
+  height: 35px;
+  background: #111;
+}
+
+/* GARIS UTAMA */
+.connector {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  z-index: 1;
+}
+
+.connector .v-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 500px;
+  background: #111;
+  transform: translateX(-50%);
+  display: block;
+}
+
+.connector .h-line {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 0;
+  height: 4px;
+  background: #111;
+  display: block;
+}
+
+/* CABANG SEKRETARIS & BENDAHARA */
+.connector-top {
+  width: 860px;
+}
+
+.connector-top .h-line {
+  left: 13%;
+  right: 13%;
+}
+.connector-bottom{
+    width: 1080px;
+}
+
+.top-branch {
+  width: 72%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 35px;
+  position: relative;
+}
+
+.top-branch .org-card::before {
+  content: "";
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  width: 4px;
+  height: 35px;
+  background: #111;
+  transform: translateX(-50%);
+}
+
+/* CABANG SEKSI */
+.connector-bottom {
+  margin-top: 35px;
+}
+
+.connector-bottom .h-line {
+  left: 7%;
+  right: 7%;
+}
+
+.seksi-branch {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  padding-top: 35px;
+  position: relative;
+}
+
+.seksi-branch .org-card::before {
+  content: "";
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  width: 4px;
+  height: 35px;
+  background: #111;
+  transform: translateX(-50%);
+}
+
+.org-card.small {
+  width: 100%;
+}
+
+.org-card.small img {
+  height: 180px;
+}
+
+.blue-info {
+  background: linear-gradient(#248fe6,#0e4f93);
+}
+
+.red-info {
+  background: linear-gradient(#e93d3d,#8f1515);
+}
+
+.green-info {
+  background: linear-gradient(#8bc34a,#4e7d16);
+}
+
+.orange-info {
+  background: linear-gradient(#ffa726,#e76f00);
+}
+
+/* PROGRAM */
+.program {
+  background: #00352d;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.program-card {
+  background: white;
+  color: #004d40;
+  padding: 28px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+
+.program-card .icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #d9ff7a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  font-size: 32px;
+}
+
+.program-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.program-card p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* CONTACT */
+.contact {
+  background:
+    radial-gradient(circle at bottom left, rgba(217,255,122,.25), transparent 35%),
+    #004d40;
+}
+
+.contact-box {
+  max-width: 850px;
+  margin: auto;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 30px;
+  padding: 40px;
+  text-align: center;
+  backdrop-filter: blur(14px);
+}
+
+.contact-box h2 {
+  font-size: 36px;
+  color: #d9ff7a;
+  margin-bottom: 15px;
+}
+
+.contact-box p {
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+footer {
+  background: #00251f;
+  padding: 25px;
+  text-align: center;
+  color: #e8f5e9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+  }
+
+  .hero-content,
+  .about-grid,
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .connector,
+  .top-branch .org-card::before,
+  .seksi-branch .org-card::before {
+    display: none;
+  }
+
+  .top-branch,
+  .seksi-branch {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding-top: 0;
+  }
+
+  .org-card,
+  .org-card.small {
+    width: 260px;
+  }
+}
+
+/* FIX GARIS DOUBLE BAGIAN SEKSI */
+.connector-bottom .v-line {
+  display: none;
+}
+
+.connector-bottom {
+  height: 40px;
+  margin-top: 45px;
+  margin-bottom: 0;
+}
+
+.connector-bottom .h-line {
+  left: 7%;
+  right: 7%;
+  bottom: 0;
+}
+
+/* garis turun ke masing-masing seksi */
+.seksi-branch {
+  padding-top: 35px;
+}
+
+.seksi-branch .org-card::before {
+  top: -35px;
+  height: 35px;
+}
+
+/*dokumentasi*/
+.dokumentasi {
+  background: #f5f5f5;
+  color: #111;
+}
+
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.folder-card {
+  background: white;
+  padding: 30px;
+  border-radius: 24px;
+  text-decoration: none;
+  color: #111;
+  box-shadow: 0 15px 35px rgba(0,0,0,.15);
+  transition: .3s;
+  border: 1px solid #e8e8e8;
+}
+
+.folder-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(0,0,0,.22);
+}
+
+.folder-icon {
+  font-size: 55px;
+  margin-bottom: 18px;
+}
+
+.folder-card h3 {
+  color: #004d40;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.folder-card p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.folder-card span {
+  display: inline-block;
+  color: #004d40;
+  font-weight: 800;
+}
