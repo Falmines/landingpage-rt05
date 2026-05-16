@@ -19,7 +19,9 @@
         <div class="logo-circle">RT</div>
         RT 05
       </div>
-
+      <div class="hamburger" onclick="toggleMenu()">
+  ☰
+</div>
       <div class="menu">
         <a href="index.html">Beranda</a>
         <a href="#tentang">Tentang</a>
@@ -148,6 +150,10 @@
   <footer>
     <p>© 2026 RT 05. All Rights Reserved.</p>
   </footer>
-
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+</script>
 </body>
 </html>
