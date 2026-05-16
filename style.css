@@ -340,7 +340,7 @@ section {
 .connector {
   position: relative;
   width: 100%;
-  height: 90px;
+  height:85px;
   z-index: 1;
 }
 
@@ -563,8 +563,15 @@ footer {
 
   .org-card,
   .org-card.small {
-    width: 260px;
+    width: 100%;
   }
+}
+.org-card.small {
+  width: 230px;
+}
+
+.org-card.small img {
+  height: 210px;
 }
 
 /* FIX GARIS DOUBLE BAGIAN SEKSI */
@@ -579,8 +586,8 @@ footer {
 }
 
 .connector-bottom .h-line {
-  left: 7%;
-  right: 7%;
+  left: 4.8%; 
+  right: 9.4%;
   bottom: 0;
 }
 
