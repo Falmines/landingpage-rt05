@@ -12,27 +12,7 @@
 </head>
 
 <body>
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const menu = document.getElementById("menu");
 
-  hamburger.addEventListener("click", function () {
-    menu.classList.toggle("active");
-
-    if (menu.classList.contains("active")) {
-      hamburger.textContent = "×";
-    } else {
-      hamburger.textContent = "☰";
-    }
-  });
-
-  document.querySelectorAll(".menu a").forEach(function(link) {
-    link.addEventListener("click", function () {
-      menu.classList.remove("active");
-      hamburger.textContent = "☰";
-    });
-  });
-</script>
   <nav>
     <div class="container navbar">
       <div class="logo">
@@ -173,5 +153,26 @@
   <footer>
     <p>© 2026 RT 05. All Rights Reserved.</p>
   </footer>
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
+
+  hamburger.addEventListener("click", function () {
+    menu.classList.toggle("active");
+
+    if (menu.classList.contains("active")) {
+      hamburger.textContent = "×";
+    } else {
+      hamburger.textContent = "☰";
+    }
+  });
+
+  document.querySelectorAll(".menu a").forEach(function(link) {
+    link.addEventListener("click", function () {
+      menu.classList.remove("active");
+      hamburger.textContent = "☰";
+    });
+  });
+</script>
 </body>
 </html>
