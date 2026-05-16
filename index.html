@@ -10,59 +10,29 @@
   <!-- CSS TERPISAH -->
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. SELECT ELEMEN
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.menu a');
 
-    // 2. FUNGSI HAMBURGER MENU (DROPDOWN)
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            // Menambah/Menghapus class 'show' untuk memunculkan menu
-            navMenu.classList.toggle('show');
-            
-            // Mengubah icon Bars menjadi X (Pastikan menggunakan FontAwesome)
-            const icon = this.querySelector('i');
-            if (navMenu.classList.contains('show')) {
-                icon.classList.replace('fa-bars', 'fa-xmark');
-            } else {
-                icon.classList.replace('fa-xmark', 'fa-bars');
-            }
-        });
-    }
-
-    // 3. TUTUP MENU SAAT LINK DIKLIK
-    // Berguna agar menu otomatis tertutup setelah kita memilih bagian (About, Services, dll)
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('show')) {
-                navMenu.classList.remove('show');
-                const icon = hamburger.querySelector('i');
-                icon.classList.replace('fa-xmark', 'fa-bars');
-            }
-        });
-    });
-
-    // 4. SMOOTH SCROLLING
-    // Membuat perpindahan antar bagian (About ke Core Values, dll) menjadi halus
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 70, // Offset agar tidak tertutup Navbar Fixed
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
-</script>
 <body>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
 
+  hamburger.addEventListener("click", function () {
+    menu.classList.toggle("active");
+
+    if (menu.classList.contains("active")) {
+      hamburger.textContent = "×";
+    } else {
+      hamburger.textContent = "☰";
+    }
+  });
+
+  document.querySelectorAll(".menu a").forEach(function(link) {
+    link.addEventListener("click", function () {
+      menu.classList.remove("active");
+      hamburger.textContent = "☰";
+    });
+  });
+</script>
   <nav>
     <div class="container navbar">
       <div class="logo">
@@ -70,19 +40,20 @@ document.addEventListener('DOMContentLoaded', function() {
         RT 05
       </div>
 
-<div class="hamburger" id="hamburger">
-  ☰
-</div>
+ <button class="hamburger" id="hamburger" type="button">
+      ☰
+    </button>
 
-<div class="menu" id="nav-menu">
-  <a href="#home">Beranda</a>
-  <a href="#tentang">Tentang</a>
-  <a href="#struktur">Struktur</a>
-  <a href="#program">Program</a>
-  <a href="#kontak">Kontak</a>
-  <a href="dokumentasi.html">Dokumentasi</a>
-</div>
-
+    <div class="menu" id="menu">
+      <a href="#home">Beranda</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#struktur">Struktur</a>
+      <a href="#program">Program</a>
+      <a href="#kontak">Kontak</a>
+      <a href="dokumentasi.html">Dokumentasi</a>
+    </div>
+  </div>
+</nav>
   <section class="hero" id="home">
     <div class="container hero-content">
       <div class="hero-text">

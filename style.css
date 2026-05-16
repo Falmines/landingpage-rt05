@@ -654,14 +654,15 @@ footer {
 
 .hamburger {
   display: none;
-  font-size: 32px;
+  background: none;
+  border: none;
   color: white;
+  font-size: 34px;
   cursor: pointer;
   z-index: 1001;
 }
 
 @media (max-width: 900px) {
-
   .hamburger {
     display: block;
   }
@@ -676,20 +677,19 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 0;
-    transition: .4s;
     padding: 20px 0;
+    transition: .35s;
     z-index: 1000;
   }
 
   .menu a {
     width: 100%;
     text-align: center;
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,.15);
   }
 
   .menu.active {
     left: 0;
   }
-
 }
