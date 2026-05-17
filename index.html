@@ -265,6 +265,86 @@
       hamburger.textContent = "☰";
     });
   });
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+    const zoomIn = document.getElementById('zoomIn');
+    const zoomOut = document.getElementById('zoomOut');
+    const closeModal = document.getElementById('closeModal');
+
+    let scale = 1;
+
+    // AMBIL SEMUA FOTO STRUKTUR ORGANISASI
+    document.querySelectorAll('.org-card img').forEach(img => {
+
+        img.style.cursor = "zoom-in";
+
+        img.addEventListener('click', function () {
+
+            modal.classList.add('active');
+
+            modalImg.src = this.src;
+
+            scale = 1;
+
+            modalImg.style.transform = `scale(${scale})`;
+        });
+
+    });
+
+    // ZOOM IN
+    zoomIn.addEventListener('click', function (e) {
+
+        e.stopPropagation();
+
+        scale += 0.2;
+
+        modalImg.style.transform = `scale(${scale})`;
+
+    });
+
+    // ZOOM OUT
+    zoomOut.addEventListener('click', function (e) {
+
+        e.stopPropagation();
+
+        scale = Math.max(0.5, scale - 0.2);
+
+        modalImg.style.transform = `scale(${scale})`;
+
+    });
+
+    // CLOSE
+    closeModal.addEventListener('click', function () {
+
+        modal.classList.remove('active');
+
+    });
+
+    // KLIK BACKGROUND
+    modal.addEventListener('click', function (e) {
+
+        if (e.target === modal) {
+
+            modal.classList.remove('active');
+
+        }
+
+    });
+
+});
 </script>
+<!-- POPUP FOTO -->
+<div id="imgModal" class="img-modal">
+  <span id="closeModal" class="close-modal">&times;</span>
+
+  <div class="zoom-controls">
+    <button id="zoomOut">-</button>
+    <button id="zoomIn">+</button>
+  </div>
+
+  <img id="modalImg" class="modal-img">
+</div>
 </body>
 </html>
