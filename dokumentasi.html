@@ -525,12 +525,26 @@ document.addEventListener("DOMContentLoaded", function(){
     const pageBtns = document.querySelectorAll(".page-btn");
     const cards = document.querySelectorAll(".folder-card");
 
-    const itemsPerPage = 16; // 3 kolom x 5 baris
+    let itemsPerPage;
+
+    // RESPONSIVE ITEM
+    function setItemsPerPage(){
+
+        if(window.innerWidth <= 576){
+            itemsPerPage = 5; // MOBILE
+        }
+        else{
+            itemsPerPage = 16; // DESKTOP 4x4
+        }
+
+    }
 
     let currentFilter = "all";
     let currentPage = 1;
 
     function renderCards(){
+
+        setItemsPerPage();
 
         let filteredCards = [];
 
@@ -599,6 +613,9 @@ document.addEventListener("DOMContentLoaded", function(){
         });
 
     });
+
+    // AUTO RENDER SAAT RESIZE
+    window.addEventListener("resize", renderCards);
 
     renderCards();
 
