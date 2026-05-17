@@ -781,13 +781,54 @@ footer {
 /* ========================================
    FILTER DOKUMENTASI
 ======================================== */
+/* FIX DOKUMENTASI CENTER */
 
-.folder-filter{
+.dokumentasi .container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto !important;
+
+    display:block !important;
+}
+/* FIX DOKUMENTASI */
+
+.dokumentasi .section-title{
     display:flex;
+    flex-direction:column;
     justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    margin-bottom:15px !important;
+}
+
+.dokumentasi .section-title h2{
+    margin-bottom:8px !important;
+}
+
+.dokumentasi .section-title p{
+    margin:0 !important;
+    line-height:1.5 !important;
+}
+
+/* FILTER */
+.folder-filter{
+    width:100%;
+
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+
     flex-wrap:wrap;
+
     gap:15px;
-    margin:35px 0 50px;
+
+    margin:10px auto 0 !important;
+}
+
+.folder-grid{
+    width:100%;
 }
 
 .filter-btn{
