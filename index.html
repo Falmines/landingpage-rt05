@@ -12,12 +12,41 @@
 </head>
 
 <body>
+  <!-- WELCOME POPUP -->
+<div class="welcome-popup" id="welcomePopup">
+
+  <div class="welcome-box">
+
+    <img src="../assets/logort.png" alt="Logo RT">
+
+    <h2>Selamat Datang</h2>
+
+    <h3>Website Resmi RT 05 RW 029</h3>
+
+    <p>
+      “Assalamu’alaikum Warahmatullahi Wabarakatuh.
+      Selamat datang di website resmi RT 05 RW 029.
+      Semoga website ini dapat menjadi media informasi,
+      komunikasi, dan mempererat silaturahmi antar warga.
+      Mari bersama menjaga lingkungan yang aman,
+      nyaman, bersih, dan harmonis.”
+    </p>
+
+    <span>- Pak Teguh</span>
+
+    <button id="closeWelcome">
+      Masuk Website
+    </button>
+
+  </div>
+
+</div>
   <nav>
     <div class="container navbar">
       <div class="logo">
-        <div class="logo-circle">RT</div>
-        RT 05
-      </div>
+  <img src="../assets/logort.png" alt="Logo RT 05">
+  <span>RT 05</span>
+</div>
 
  <button class="hamburger" id="hamburger" type="button">
       ☰
@@ -332,6 +361,15 @@
         }
 
     });
+
+});
+// CLOSE WELCOME POPUP
+const welcomePopup = document.getElementById("welcomePopup");
+const closeWelcome = document.getElementById("closeWelcome");
+
+closeWelcome.addEventListener("click", function(){
+
+    welcomePopup.style.display = "none";
 
 });
 </script>
