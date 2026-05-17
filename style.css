@@ -351,8 +351,15 @@ section {
   width: 4px;
   height: 500px;
   background: #111;
-  transform: translateX(-50%);
-  display: block;
+  .connector .v-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 500px;
+  background: #111;
+  transform: translateX(-2px);
+};
 }
 
 .connector .h-line {
